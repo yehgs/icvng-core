@@ -1,5 +1,8 @@
 {
   "name": "@calstins/icvng-core",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "version": "0.9.1",
   "description": "Shared business logic for ICVNG/i-Coffee storefronts (web + mobile): API layer, auth/token handling, Redux slices, pricing rules, and country/currency headers.",
   "license": "UNLICENSED",

@@ -7,7 +7,7 @@
 //
 // Usage in an app:
 //   import { configureStore } from '@reduxjs/toolkit';
-//   import { coreReducers } from '@calstins/icvng-core/store';
+//   import { coreReducers } from '@yehgs/icvng-core/store';
 //
 //   export const store = configureStore({
 //     reducer: {
@@ -16,13 +16,13 @@
 //     },
 //   });
 
-import userReducer from './userSlice.js';
-import productReducer from './productSlice.js';
-import cartReducer from './cartProduct.js';
-import addressReducer from './addressSlice.js';
-import orderReducer from './orderSlice.js';
-import filterReducer from './filterSlice.js';
-import productRequestReducer from './productRequestSlice.js';
+import userReducer from "./userSlice.js";
+import productReducer from "./productSlice.js";
+import cartReducer from "./cartProduct.js";
+import addressReducer from "./addressSlice.js";
+import orderReducer from "./orderSlice.js";
+import filterReducer from "./filterSlice.js";
+import productRequestReducer from "./productRequestSlice.js";
 
 export const coreReducers = {
   user: userReducer,
@@ -35,12 +35,12 @@ export const coreReducers = {
 };
 
 // Re-export every slice's actions so apps can do
-// `import { setUserDetails, handleAddItemCart } from '@calstins/icvng-core/store'`
+// `import { setUserDetails, handleAddItemCart } from '@yehgs/icvng-core/store'`
 // without knowing which file each one lives in.
-export * from './userSlice.js';
-export * from './productSlice.js';
-export * from './cartProduct.js';
-export * from './addressSlice.js';
-export * from './orderSlice.js';
-export * from './filterSlice.js';
-export * from './productRequestSlice.js';
+export * from "./userSlice.js";
+export * from "./productSlice.js";
+export * from "./cartProduct.js";
+export * from "./addressSlice.js";
+export * from "./orderSlice.js";
+export * from "./filterSlice.js";
+export * from "./productRequestSlice.js";

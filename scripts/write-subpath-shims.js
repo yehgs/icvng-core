@@ -1,7 +1,7 @@
 // scripts/write-subpath-shims.js
 //
 // Vite/webpack/Node all fully respect package.json's root "exports" map, so
-// `import '@calstins/icvng-core/store'` resolves correctly for the web
+// `import '@yehgs/icvng-core/store'` resolves correctly for the web
 // client out of the box. Metro (React Native's bundler) does NOT respect
 // "exports" by default — it falls back to legacy Node resolution, which
 // means: for `require('pkg/subpath')`, look for a physical `subpath/`
@@ -13,13 +13,25 @@
 // build output under dist/. Re-run after every `tsup` build — wired into
 // the "build" script in package.json so it always happens automatically.
 
-import { writeFileSync, mkdirSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import path from 'node:path';
+import { writeFileSync, mkdirSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
 
-const rootDir = path.resolve(fileURLToPath(import.meta.url), '../..');
+const rootDir = path.resolve(fileURLToPath(import.meta.url), "../..");
 
-const subpaths = ['api', 'store', 'pricing', 'catalog', 'auth', 'cart', 'wishlist', 'compare', 'checkout', 'shipping', 'address'];
+const subpaths = [
+  "api",
+  "store",
+  "pricing",
+  "catalog",
+  "auth",
+  "cart",
+  "wishlist",
+  "compare",
+  "checkout",
+  "shipping",
+  "address",
+];
 
 for (const subpath of subpaths) {
   // Root-level folder (e.g. <pkg>/store/), NOT nested under dist/ — Metro's
@@ -32,7 +44,7 @@ for (const subpath of subpaths) {
     main: `../dist/${subpath}/index.cjs`,
     module: `../dist/${subpath}/index.js`,
   };
-  const outPath = path.join(dir, 'package.json');
-  writeFileSync(outPath, JSON.stringify(shim, null, 2) + '\n');
+  const outPath = path.join(dir, "package.json");
+  writeFileSync(outPath, JSON.stringify(shim, null, 2) + "\n");
   console.log(`[icvng-core] wrote ${path.relative(rootDir, outPath)}`);
 }

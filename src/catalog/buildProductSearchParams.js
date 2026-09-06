@@ -3,7 +3,7 @@
 // Ported from the `merged` object construction inside
 // client/src/pages/EnhancedShopPage.jsx's fetchProducts(). That page reads
 // filter state from Redux's filterSlice (already shared via
-// @calstins/icvng-core/store — same reducer, same shape, on both
+// @yehgs/icvng-core/store — same reducer, same shape, on both
 // platforms) and turns it into the exact request body sent to
 // SummaryApi.searchProduct (POST /api/product/search-product).
 //
@@ -29,17 +29,18 @@
 // @returns {object} the exact `data` payload to pass alongside
 //   endpoints.searchProduct to your api client
 export function buildProductSearchParams(filters = {}, options = {}) {
-  const { search = '', page = 1 } = options;
+  const { search = "", page = 1 } = options;
 
   let sortValue = filters.sort;
-  if (sortValue === 'newest') {
-    sortValue = '';
+  if (sortValue === "newest") {
+    sortValue = "";
   }
 
   return {
     search,
     page,
-    productType: filters.productType?.length > 0 ? filters.productType : undefined,
+    productType:
+      filters.productType?.length > 0 ? filters.productType : undefined,
     category: filters.category || undefined,
     subCategory: filters.subCategory || undefined,
     brand: filters.brand?.length > 0 ? filters.brand : undefined,

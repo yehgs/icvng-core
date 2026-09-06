@@ -1,0 +1,4 @@
+{
+  "main": "../dist/wishlist/index.cjs",
+  "module": "../dist/wishlist/index.js"
+}

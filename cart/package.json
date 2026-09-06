@@ -1,0 +1,4 @@
+{
+  "main": "../dist/cart/index.cjs",
+  "module": "../dist/cart/index.js"
+}

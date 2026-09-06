@@ -1,0 +1,4 @@
+{
+  "main": "../dist/shipping/index.cjs",
+  "module": "../dist/shipping/index.js"
+}

@@ -1,0 +1,4 @@
+{
+  "main": "../dist/auth/index.cjs",
+  "module": "../dist/auth/index.js"
+}

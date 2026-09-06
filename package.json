@@ -1,0 +1,90 @@
+{
+  "name": "@calstins/icvng-core",
+  "version": "0.9.1",
+  "description": "Shared business logic for ICVNG/i-Coffee storefronts (web + mobile): API layer, auth/token handling, Redux slices, pricing rules, and country/currency headers.",
+  "license": "UNLICENSED",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./api": {
+      "import": "./dist/api/index.js",
+      "require": "./dist/api/index.cjs"
+    },
+    "./store": {
+      "import": "./dist/store/index.js",
+      "require": "./dist/store/index.cjs"
+    },
+    "./pricing": {
+      "import": "./dist/pricing/index.js",
+      "require": "./dist/pricing/index.cjs"
+    },
+    "./catalog": {
+      "import": "./dist/catalog/index.js",
+      "require": "./dist/catalog/index.cjs"
+    },
+    "./auth": {
+      "import": "./dist/auth/index.js",
+      "require": "./dist/auth/index.cjs"
+    },
+    "./cart": {
+      "import": "./dist/cart/index.js",
+      "require": "./dist/cart/index.cjs"
+    },
+    "./wishlist": {
+      "import": "./dist/wishlist/index.js",
+      "require": "./dist/wishlist/index.cjs"
+    },
+    "./compare": {
+      "import": "./dist/compare/index.js",
+      "require": "./dist/compare/index.cjs"
+    },
+    "./checkout": {
+      "import": "./dist/checkout/index.js",
+      "require": "./dist/checkout/index.cjs"
+    },
+    "./shipping": {
+      "import": "./dist/shipping/index.js",
+      "require": "./dist/shipping/index.cjs"
+    },
+    "./address": {
+      "import": "./dist/address/index.js",
+      "require": "./dist/address/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "api",
+    "store",
+    "pricing",
+    "catalog",
+    "auth",
+    "cart",
+    "wishlist",
+    "compare",
+    "checkout",
+    "shipping",
+    "address"
+  ],
+  "scripts": {
+    "build": "tsup && npm run build:subpath-shims",
+    "build:subpath-shims": "node scripts/write-subpath-shims.js",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
+    "axios": "^1.7.4"
+  },
+  "devDependencies": {
+    "@reduxjs/toolkit": "^2.12.0",
+    "axios": "^1.20.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}

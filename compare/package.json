@@ -1,0 +1,4 @@
+{
+  "main": "../dist/compare/index.cjs",
+  "module": "../dist/compare/index.js"
+}
